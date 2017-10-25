@@ -36,6 +36,23 @@ namespace Extensions
             var it = cs.noMatterWho[1];
          
                 Console.WriteLine("{0}  {1}", it.id, it.model);
+            Console.WriteLine("-------------------------------------------------------------------");
+
+            string srt = "абабагаламага";
+            srt.CharInString();
+        }
+    }
+
+    public static class ExtensionClass
+    {
+        public static void CharInString(this string str)
+        {
+            char[] arrChars = str.ToCharArray();
+
+            foreach (var item in arrChars)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }
