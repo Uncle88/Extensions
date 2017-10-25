@@ -4,34 +4,31 @@ using System.Collections.Generic;
 
 namespace Extensions
 {
-    public class CustomSequence //: IEnumerable
+    public class CustomSequence : IEnumerable
     {
-        object[] noMatterWho = { 1, "car", 'a', 2.5, 565647383 };
+        private car[] noMatterWho = new car[5];
 
-        List<car> myListGeneric = new List<car>
+        public CustomSequence()
         {
-            new car{ id = 1, model = "subaru"},
-            new car{ id = 2, model = "volvo"},
-            new car{ id = 3, model = "WV"},
-            new car{ id = 4, model = "skoda"},
-            new car{ id = 5, model = "opel"}
-        };
+            noMatterWho[0] = new car(1, "subaru");
+            noMatterWho[1] = new car(2, "wv");
+            noMatterWho[2] = new car(3, "skoda");
+            noMatterWho[3] = new car(4, "iveco");
+            noMatterWho[4] = new car(5, "opel");
+        }
+        List<car> myListGeneric = new List<car>();
 
-        public IEnumerator GetEnumerato(int a)
+        public IEnumerable customGetEnumerator()
         {
-            if (a<10)
-            {
-                for (int i = 0; i < myListGeneric.Count; i++)
-                {
-                    yield return myListGeneric[i];
-                }
-            }
-            else{
-                foreach (var item in myListGeneric)
-                {
-                    yield return item;
-                }
-            }
+            for (int i = 0; i < noMatterWho.Length; i++)
+          {
+                yield return noMatterWho[i];
+          }
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            return noMatterWho.GetEnumerator();
         }
     }
 }

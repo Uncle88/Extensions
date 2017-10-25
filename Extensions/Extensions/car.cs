@@ -5,5 +5,11 @@ namespace Extensions
     {
         public int id { get; set; }
         public string model { get; set; }
+
+        public car(int a, string str)
+        {
+            this.id = a;
+            this.model = str;
+        }
     }
 }
