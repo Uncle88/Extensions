@@ -6,7 +6,7 @@ namespace Extensions
 {
     public class CustomSequence : IEnumerable
     {
-        List<car> noMatterWho = new List<car>()
+        public List<car> noMatterWho = new List<car>()
         {
             new car(1, "subaru"),
             new car(2, "wv"),
@@ -14,7 +14,6 @@ namespace Extensions
             new car(4, "iveco"),
             new car(5, "opel")
         };
-
 
         public IEnumerable customGetEnumerator()
         {
