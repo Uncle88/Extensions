@@ -27,5 +27,11 @@ namespace Extensions
         {
             return noMatterWho.GetEnumerator();
         }
+
+        public car  this [int index]
+        {
+            get => noMatterWho[index]; 
+            set => noMatterWho[index] = value; 
+        }
     }
 }

@@ -30,6 +30,12 @@ namespace Extensions
             {
                 Console.WriteLine(item);
             }
+
+            Console.WriteLine("use indexer to my sequence\n");
+
+            var it = cs.noMatterWho[1];
+         
+                Console.WriteLine("{0}  {1}", it.id, it.model);
         }
     }
 }
