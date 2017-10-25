@@ -40,6 +40,9 @@ namespace Extensions
 
             string srt = "абабагаламага";
             srt.CharInString();
+            Console.WriteLine(";;;;;;;;;;;;;;;;;;;;;;");
+
+            srt.PairedCharsInString();
         }
     }
 
@@ -50,6 +53,25 @@ namespace Extensions
             char[] arrChars = str.ToCharArray();
 
             foreach (var item in arrChars)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+        public static void PairedCharsInString(this string str)
+        {
+            char[] massChars = str.ToCharArray();
+            char[] outMassChars = new char[7];
+
+            for (int i = 0; i < massChars.Length; i++)
+            {
+                if (i%2==0)
+                {
+                    for (int j = 0; j < outMassChars.Length; j++)
+                    outMassChars[j] = massChars[i];
+                }
+            }
+            foreach (var item in outMassChars)
             {
                 Console.WriteLine(item);
             }
