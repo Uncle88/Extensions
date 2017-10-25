@@ -6,21 +6,19 @@ namespace Extensions
 {
     public class CustomSequence : IEnumerable
     {
-        private car[] noMatterWho = new car[5];
-
-        public CustomSequence()
+        List<car> noMatterWho = new List<car>()
         {
-            noMatterWho[0] = new car(1, "subaru");
-            noMatterWho[1] = new car(2, "wv");
-            noMatterWho[2] = new car(3, "skoda");
-            noMatterWho[3] = new car(4, "iveco");
-            noMatterWho[4] = new car(5, "opel");
-        }
-        List<car> myListGeneric = new List<car>();
+            new car(1, "subaru"),
+            new car(2, "wv"),
+            new car(3, "skoda"),
+            new car(4, "iveco"),
+            new car(5, "opel")
+        };
+
 
         public IEnumerable customGetEnumerator()
         {
-            for (int i = 0; i < noMatterWho.Length; i++)
+            for (int i = 0; i < noMatterWho.Count; i++)
           {
                 yield return noMatterWho[i];
           }
