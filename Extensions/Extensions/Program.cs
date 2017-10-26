@@ -44,7 +44,7 @@ namespace Extensions
 
             srt.PairedCharsInString();
 
-            IEnumerable<char> chars = ExtensionClass.PairedCharsInString("Proskura");
+            string chars = ExtensionClass.PairedCharsInString("Proskura");
         }
     }
 
@@ -56,10 +56,10 @@ namespace Extensions
             return arrChars;
         }
 
-        public static IEnumerable<char> PairedCharsInString(this string str)
+        public static string PairedCharsInString(this string str)
         {
-            IEnumerable<char> massChars = str.ToCharArray();
-            var outMassChars = massChars.Select((v, i) => new { Index = i, Value = v }).Where(p => p.Index % 2 == 0).Select(p => p.Value);
+            var massChars = str.ToCharArray();
+            var outMassChars = massChars.Select((v, i) => new { Index = i, Value = v }).Where(p => p.Index % 2 == 0).Select(p => p.Value).ToString();
             return outMassChars;
         }
     }
