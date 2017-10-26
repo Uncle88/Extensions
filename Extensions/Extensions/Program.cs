@@ -58,7 +58,7 @@ namespace Extensions
 
         public static IEnumerable<char> PairedCharsInString(this string str)
         {
-            char[] massChars = str.ToCharArray();
+            IEnumerable<char> massChars = str.ToCharArray();
             var outMassChars = massChars.Select((v, i) => new { Index = i, Value = v }).Where(p => p.Index % 2 == 0).Select(p => p.Value);
             return outMassChars;
         }
