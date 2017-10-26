@@ -58,7 +58,7 @@ namespace Extensions
             }
         }
 
-        public static void PairedCharsInString(this string str)
+        public static char[] PairedCharsInString(this string str)
         {
             char[] massChars = str.ToCharArray();
             char[] outMassChars = new char[7];
@@ -71,10 +71,7 @@ namespace Extensions
                     outMassChars[j] = massChars[i];
                 }
             }
-            foreach (var item in outMassChars)
-            {
-                Console.WriteLine(item);
-            }
+            return outMassChars;
         }
     }
 }
