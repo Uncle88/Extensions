@@ -48,14 +48,10 @@ namespace Extensions
 
     public static class ExtensionClass
     {
-        public static void CharInString(this string str)
+        public static char[] CharInString(this string str)
         {
             char[] arrChars = str.ToCharArray();
-
-            foreach (var item in arrChars)
-            {
-                Console.WriteLine(item);
-            }
+            return arrChars;
         }
 
         public static string PairedCharsInString(this string str)
