@@ -42,7 +42,7 @@ namespace Extensions
             srt.CharInString();
             Console.WriteLine(";;;;;;;;;;;;;;;;;;;;;;");
 
-            srt.PairedCharsInString();
+            //srt.PairedCharsInString();
 
             string chars = ExtensionClass.PairedCharsInString("Proskura");
         }
@@ -58,9 +58,10 @@ namespace Extensions
 
         public static string PairedCharsInString(this string str)
         {
-            var massChars = str.ToCharArray();
-            var outMassChars = massChars.Select((v, i) => new { Index = i, Value = v }).Where(p => p.Index % 2 == 0).Select(p => p.Value).ToString();
-            return outMassChars;
+            char[] massChars = str.ToCharArray();
+            var outMassChars = massChars.AsEnumerable().Select((v, i) => new { Index = i, Value = v }).Where(p => p.Index % 2 == 0).Select(p => p.Value).ToArray();
+            string gop = new string(outMassChars);
+            return gop;
         }
     }
 }
