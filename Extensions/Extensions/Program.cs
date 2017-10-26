@@ -57,17 +57,18 @@ namespace Extensions
         public static string PairedCharsInString(this string str)
         {
             char[] massChars = str.ToCharArray();
-            char[] outMassChars = new char[7];
+            string outMassChars = massChars.Where(i => i % 2 == 0).Select(a => a).ToString();
+            return outMassChars;
 
-            for (int i = 0; i < massChars.Length; i++)
-            {
-                if (i%2==0)
-                {
-                    for (int j = 0; j < outMassChars.Length; j++)
-                    outMassChars[j] = massChars[i];
-                }
-            }
-            return outMassChars.ToString();
+            //for (int i = 0; i < massChars.Length; i++)
+            //{
+            //    if (i%2==0)
+            //    {
+            //        for (int j = 0; j < outMassChars.Length; j++)
+            //        outMassChars[j] = massChars[i];
+            //    }
+            //}
+            //return outMassChars.ToString();
         }
     }
 }
