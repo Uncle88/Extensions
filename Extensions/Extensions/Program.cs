@@ -10,21 +10,21 @@ namespace Extensions
         {
             CustomSequence cs = new CustomSequence();
 
-            foreach (car c in cs)
+            foreach (Car c in cs)
             {
-                Console.WriteLine("{0}\t{1}", c.id, c.model);
+                Console.WriteLine("{0}\t{1}", c.Id, c.Model);
             }
 
             Console.WriteLine("==========");
 
-            foreach (car c in cs.customGetEnumerator())
+            foreach (Car c in cs.customGetEnumerator())
             {
-                Console.WriteLine("{0}\t{1}", c.id, c.model);
+                Console.WriteLine("{0}\t{1}", c.Id, c.Model);
             }
 
             Console.WriteLine("applying LINQ to my sequence\n");
 
-            var selectedItem = cs.noMatterWho.Where(s => s.id > 3).Select(s => s.model.Count());
+            var selectedItem = cs.noMatterWho.Where(s => s.Id > 3).Select(s => s.Model.Count());
 
             foreach (var item in selectedItem)
             {
@@ -35,7 +35,7 @@ namespace Extensions
 
             var it = cs.noMatterWho[1];
          
-                Console.WriteLine("{0}  {1}", it.id, it.model);
+                Console.WriteLine("{0}  {1}", it.Id, it.Model);
             Console.WriteLine("-------------------------------------------------------------------");
 
             string srt = "абабагаламага";
@@ -45,6 +45,7 @@ namespace Extensions
             //srt.PairedCharsInString();
 
             string chars = ExtensionClass.PairedCharsInString("Proskura");
+            Console.WriteLine(chars);
         }
     }
 
@@ -60,8 +61,8 @@ namespace Extensions
         {
             char[] massChars = str.ToCharArray();
             var outMassChars = massChars.AsEnumerable().Select((v, i) => new { Index = i, Value = v }).Where(p => p.Index % 2 == 0).Select(p => p.Value).ToArray();
-            string gop = new string(outMassChars);
-            return gop;
+            string outStr = new string(outMassChars);
+            return outStr;
         }
     }
 }

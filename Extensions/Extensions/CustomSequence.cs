@@ -6,13 +6,13 @@ namespace Extensions
 {
     public class CustomSequence : IEnumerable
     {
-        public List<car> noMatterWho = new List<car>()
+        public List<Car> noMatterWho = new List<Car>()
         {
-            new car(1, "subaru"),
-            new car(2, "wv"),
-            new car(3, "skoda"),
-            new car(4, "iveco"),
-            new car(5, "opel")
+            new Car(1, "subaru"),
+            new Car(2, "wv"),
+            new Car(3, "skoda"),
+            new Car(4, "iveco"),
+            new Car(5, "opel")
         };
 
         public IEnumerable customGetEnumerator()
@@ -28,7 +28,7 @@ namespace Extensions
             return noMatterWho.GetEnumerator();
         }
 
-        public car  this [int index]
+        public Car  this [int index]
         {
             get => noMatterWho[index]; 
             set => noMatterWho[index] = value; 
